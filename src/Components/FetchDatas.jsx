@@ -14,7 +14,7 @@ export default function FetchDatas() {
       .catch((error) => {
         console.error("Error fetching images:", error);
       });
-  }, []); // Empty dependency array to fetch data only once when the component mounts
+  }, []); 
 
   return (
     <div>
