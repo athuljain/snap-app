@@ -7,9 +7,9 @@ export default function JsonData(){
     return(
         <div>
             <h1>Snap Pics</h1>
-            <div>
+            <div >
                 {snap.map((data,index)=>(
-                    <div>
+                    <div >
                         <img src={data.image} alt="img" />
                         <p>{data.description}</p>
                 

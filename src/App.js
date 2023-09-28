@@ -5,6 +5,7 @@ import './App.css';
 import Home from './Components/Home';
 import { useState } from 'react';
 import JsonData from './Components/JsonData';
+import FetchDatas from './Components/FetchDatas';
 
 
 
@@ -29,7 +30,8 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/jsonDatas' element={<JsonData />} />
-        
+        <Route path='/fetch' element={<FetchDatas />} />
+
       </Routes>
       </myContext.Provider>
       </BrowserRouter>

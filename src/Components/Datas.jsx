@@ -10,15 +10,15 @@ export const JsonDatas=[
         },
         {
           "description":"Beautiful scenery",
-          "image":"https://i.imgur.com/2jMCqQ2.jpg"
+          "image":"https://i.pinimg.com/236x/d8/71/25/d871257b628eef13bceed5504f4fade2.jpg"
         },
         {
-          "description":"Some kind of bird",
-          "image":"https://i.imgur.com/QFDRuAh.jpg"
+          "description":"Illusrtaion",
+          "image":"https://i.pinimg.com/236x/9b/7e/0a/9b7e0ad14647458ed374eba48b98f81f.jpg"
         },
         {
-          "description":"The attack of dragons",
-          "image":"https://i.imgur.com/8yIIokW.jpg"
+          "description":"Illusrtaion",
+          "image":"https://i.pinimg.com/236x/08/bd/00/08bd005bd19cdf15b0fdc2bd11b5fa8c.jpg"
         }
         
       
