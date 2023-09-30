@@ -1,3 +1,4 @@
+import "./JsonData.css"
 import { useContext } from "react"
 import { myContext } from "../Context"
 
