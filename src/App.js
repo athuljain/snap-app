@@ -8,10 +8,6 @@ import JsonData from './Components/JsonData';
 import FetchDatas from './Components/FetchDatas';
 
 
-
-
-
-
 function App() {
   const [snap,setSnap] = useState(JsonDatas)
 
@@ -20,8 +16,6 @@ function App() {
     setSnap,
 
   }
-
-
 
   return (
     <div className="App">

@@ -14,7 +14,7 @@ export default function FetchDatas() {
       .catch((error) => {
         console.error("Error fetching images:", error);
       });
-  }, []); 
+  }, []);
 
   return (
     <div>
