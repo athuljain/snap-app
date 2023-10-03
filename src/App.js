@@ -8,6 +8,8 @@ import JsonData from './Components/JsonData';
 import FetchDatas from './Components/FetchDatas';
 
 
+
+
 function App() {
   const [snap,setSnap] = useState(JsonDatas)
 
@@ -17,8 +19,11 @@ function App() {
 
   }
 
+
+
   return (
     <div className="App">
+     
       <BrowserRouter>
       <myContext.Provider value={values}>
       <Routes>
