@@ -6,16 +6,20 @@ import Home from './Components/Home';
 import { useState } from 'react';
 import JsonData from './Components/JsonData';
 import FetchDatas from './Components/FetchDatas';
-
+import SnapData from './Components/SnapData.json'
+import JsonComponent from './Components/JsonComponent';
 
 
 
 function App() {
   const [snap,setSnap] = useState(JsonDatas)
+  const [json,setJson] = useState(SnapData)
 
   const values={
     snap,
     setSnap,
+    json,
+    setJson
 
   }
 
@@ -30,7 +34,7 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/jsonDatas' element={<JsonData />} />
         <Route path='/fetch' element={<FetchDatas />} />
-
+        <Route path='/json' element={<JsonComponent />} />
       </Routes>
       </myContext.Provider>
       </BrowserRouter>
