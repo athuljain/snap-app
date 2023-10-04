@@ -12,6 +12,9 @@ import JsonComponent from './Components/JsonComponent';
 
 
 function App() {
+
+ 
+
   const [snap,setSnap] = useState(JsonDatas)
   const [json,setJson] = useState(SnapData)
 
@@ -19,7 +22,8 @@ function App() {
     snap,
     setSnap,
     json,
-    setJson
+    setJson,
+    
 
   }
 

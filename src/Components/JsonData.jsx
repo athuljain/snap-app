@@ -4,10 +4,11 @@ import { myContext } from "../Context";
 import "./JsonData.css"
 
 export default function JsonData() {
-  const { snap } = useContext(myContext);
+  const { snap, } = useContext(myContext);
   console.log(snap);
   return (
     <div >
+      
       <h1>Snap Pics</h1>
       <div className="SnapDiv">
         {snap.map((data, index) => (
