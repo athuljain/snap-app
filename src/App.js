@@ -13,7 +13,7 @@ import JsonComponent from './Components/JsonComponent';
 
 function App() {
 
- 
+ const data="kadavanthra"
 
   const [snap,setSnap] = useState(JsonDatas)
   const [json,setJson] = useState(SnapData)
@@ -23,7 +23,7 @@ function App() {
     setSnap,
     json,
     setJson,
-    
+    data
 
   }
 

@@ -1,12 +1,16 @@
 // import React, { useContext } from "react";
 // import { myContext } from "../Context";
+import { useContext } from "react";
 import {  useNavigate } from "react-router-dom";
+import { myContext } from "../Context";
 
 export default function Home() {
   const navigate = useNavigate();
 
   // const { snap } = useContext(myContext);
   // console.log(snap);
+  const data= useContext(myContext)
+  console.log(data);
 
   return (
     <div>
