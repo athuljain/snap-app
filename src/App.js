@@ -9,7 +9,8 @@ import JsonData from './Components/JsonData';
 import FetchDatas from './Components/FetchDatas';
 import SnapData from './Components/SnapData.json'
 import JsonComponent from './Components/JsonComponent';
-import Shoes from './Components/Shoes';
+import Shoes, { Adidas,Nike } from './Components/Shoes';
+
 
 
 
@@ -46,6 +47,8 @@ function App() {
         <Route path='/fetch' element={<FetchDatas />} />
         <Route path='/json' element={<JsonComponent />} />
         <Route path='/shoes' element={<Shoes />} />
+        <Route path='/nike' element={<Nike />} />
+        <Route path='adidas' element={<Adidas /> } />
       </Routes>
       </myContext.Provider>
       </BrowserRouter>
