@@ -8,5 +8,13 @@ img{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    
+    margin: 10px;
+    background-color: aquamarine;
+}
+.containerMain{
+    padding: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
 }

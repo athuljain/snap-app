@@ -19,12 +19,12 @@ export default function Shoes(){
             <Link to={'/adidas'}>Adidas Shoes...</Link>
             </>
             <h1>Shoes Products ...</h1>
-            <div className="container">
+            <div className="containerMain">
             {shoes.map((data,index)=>
             <div >
-            <img  src={data.img} alt="img"></img>
-            <h4>{data.name}</h4>
-            <h5>{data.brand}</h5>
+            <img src={data.img} alt="img" ></img>
+                <h1>{data.name}</h1>
+                <h3>Brand : {data.brand}</h3>
             </div>
             )}
             </div>
@@ -51,7 +51,8 @@ export function Nike(){
 {NikeShoes.map((data)=>
     <div >
 <img src={data.img} alt="img" ></img>
-<h1>{data.brand}</h1>
+                <h1>{data.name}</h1>
+                <h3>Brand : {data.brand}</h3>
 </div>
 
 )}
@@ -77,6 +78,7 @@ export function Adidas(){
                 <div >
                 <img src={data.img} alt="img" ></img>
                 <h1>{data.name}</h1>
+                <h3>Brand : {data.brand}</h3>
                 </div>
                 )}
                 </div>

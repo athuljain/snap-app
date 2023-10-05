@@ -35,7 +35,7 @@ export const ShoeProducts=[
         "img":"https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/433b6a5b-f158-4a87-a7dd-ce16bdd099f0/air-max-90-shoes-hkwJRC.png"
     },
     {
-        "name":"SOFTRIDE Pro Coast Unisex Running Shoes",
+        "name":"SOFTRIDE Running Shoes",
         "brand":"Puma",
         "img":"https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_600,h_600/global/377059/12/sv02/fnd/IND/fmt/png/SOFTRIDE-Pro-Coast-Unisex-Running-Shoes"
     },
