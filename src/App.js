@@ -1,6 +1,7 @@
 import {BrowserRouter,Route,Routes} from 'react-router-dom';
 import { myContext } from './Context';
 import  {JsonDatas}  from './Components/Datas';
+import {ShoeProducts} from './Components/ShoeProducts'
 import './App.css';
 import Home from './Components/Home';
 import { useState } from 'react';
@@ -8,6 +9,7 @@ import JsonData from './Components/JsonData';
 import FetchDatas from './Components/FetchDatas';
 import SnapData from './Components/SnapData.json'
 import JsonComponent from './Components/JsonComponent';
+import Shoes from './Components/Shoes';
 
 
 
@@ -17,13 +19,17 @@ function App() {
 
   const [snap,setSnap] = useState(JsonDatas)
   const [json,setJson] = useState(SnapData)
+  const [shoes,setShoes]=useState(ShoeProducts)
+
 
   const values={
     snap,
     setSnap,
     json,
     setJson,
-    data
+    data,
+    shoes,
+    setShoes
 
   }
 
@@ -39,6 +45,7 @@ function App() {
         <Route path='/jsonDatas' element={<JsonData />} />
         <Route path='/fetch' element={<FetchDatas />} />
         <Route path='/json' element={<JsonComponent />} />
+        <Route path='/shoes' element={<Shoes />} />
       </Routes>
       </myContext.Provider>
       </BrowserRouter>
