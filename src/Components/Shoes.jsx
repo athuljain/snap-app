@@ -1,13 +1,24 @@
 import { useContext, useState } from "react";
 import { myContext } from "../Context";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Shoes.css";
 
 // All Shoe Products
 
 export default function Shoes() {
-  const { shoes } = useContext(myContext);
+  const { shoes,  likeProducts,setLikeProducts } = useContext(myContext);
   console.log("Shoes Products", shoes);
+
+  const addToLikedProducts = (product) => {
+
+    setLikeProducts([...likeProducts, product]);
+
+  
+  };
+  console.log("shoes page",likeProducts);
+
+
+
   const [searchInput, setSearchInput] = useState("");
 
   function handleSearch() {
@@ -17,6 +28,8 @@ export default function Shoes() {
       return "/nike";
     }
   }
+
+  const nav=useNavigate()
 
   return (
     <div>
@@ -34,15 +47,19 @@ export default function Shoes() {
 
       <>
         <Link to={"/nike"}>Nike Shoes... </Link>
-        <Link to={"/adidas"}>Adidas Shoes...</Link>
+        <Link to={"/adidas"}>Adidas Shoes...</Link> <br></br>
+        <button onClick={()=>{ nav('/likeproducts')}} >Like Items</button>
+
+
       </>
       <h1>Shoes Products ...</h1>
       <div className="containerMain">
         {shoes.map((data, index) => (
-          <div>
+          <div key={index}>
             <img src={data.img} alt="img"></img>
             <h1>{data.name}</h1>
             <h3>Brand : {data.brand}</h3>
+            <button onClick={()=> addToLikedProducts((data))}>Like</button>
           </div>
         ))}
       </div>

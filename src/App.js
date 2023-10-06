@@ -12,6 +12,7 @@ import JsonComponent from './Components/JsonComponent';
 import Shoes from './Components/Shoes';
 import Adidas from './Components/Adidas'; 
 import Nike from './Components/Nike';
+import LikeProducts from './Components/LikeProducts';
 
 
 function App() {
@@ -21,6 +22,9 @@ function App() {
   const [snap,setSnap] = useState(JsonDatas)
   const [json,setJson] = useState(SnapData)
   const [shoes,setShoes]=useState(ShoeProducts)
+  const [likeProducts,setLikeProducts] = useState([])
+
+ 
 
 
   const values={
@@ -30,11 +34,13 @@ function App() {
     setJson,
     data,
     shoes,
-    setShoes
-
+    setShoes,
+    likeProducts,
+    setLikeProducts,
+   
   }
 
-
+console.log("app.",likeProducts);
 
   return (
     <div className="App">
@@ -49,6 +55,7 @@ function App() {
         <Route path='/shoes' element={<Shoes />} />
         <Route path='/nike' element={<Nike />} />
         <Route path='adidas' element={<Adidas /> } />
+        <Route path='/likeproducts' element={<LikeProducts />} />
       </Routes>
       </myContext.Provider>
       </BrowserRouter>

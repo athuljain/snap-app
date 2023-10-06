@@ -16,6 +16,7 @@ export default function Nike(){
             <img src={data.img} alt="img"></img>
             <h1>{data.name}</h1>
             <h3>Brand : {data.brand}</h3>
+            <button>Like</button>
           </div>
         ))}
       </div>
