@@ -10,18 +10,16 @@ export default function Shoes() {
   console.log("Shoes Products", shoes);
   const [searchInput, setSearchInput] = useState("");
 
-  
   function handleSearch() {
     if (searchInput.toLowerCase().includes("adidas")) {
       return "/adidas";
     } else if (searchInput.toLowerCase().includes("nike")) {
       return "/nike";
     }
-  
-}
+  }
 
   return (
-    <div className="ContainerMain">
+    <div>
       <div>
         <div>
           <input
@@ -30,12 +28,7 @@ export default function Shoes() {
             value={searchInput}
             onChange={(e) => setSearchInput(e.target.value)}
           />
-          <Link
-            to={handleSearch()}
-            className="Search-btn linkWithoutDecoration"
-          >
-            Search
-          </Link>
+          <Link to={handleSearch()}>Search</Link>
         </div>
       </div>
 
