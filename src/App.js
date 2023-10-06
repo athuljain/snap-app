@@ -9,9 +9,9 @@ import JsonData from './Components/JsonData';
 import FetchDatas from './Components/FetchDatas';
 import SnapData from './Components/SnapData.json'
 import JsonComponent from './Components/JsonComponent';
-import Shoes, { Adidas,Nike } from './Components/Shoes';
-
-
+import Shoes from './Components/Shoes';
+import Adidas from './Components/Adidas'; 
+import Nike from './Components/Nike';
 
 
 function App() {
