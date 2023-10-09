@@ -1,23 +1,32 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { myContext } from "../Context";
 
 export default function Register() {
-  const { userInfo, setUserInfo } = useContext(myContext);
+  const { userInfo, setUserInfo,newUser, setNewUser } = useContext(myContext);
+
+  // const [newUser, setNewUser] = useState({
+  //   email: "",
+  //   userName: "",
+  //   password: "",
+  // });
+
 
   function userInformation(e) {
     const { name, value } = e.target;
-    setUserInfo((prevUserInfo) => ({
-      ...prevUserInfo,
+    setNewUser((prevUser) => ({
+      ...prevUser,
       [name]: value,
     }));
-    console.log("userData",userInfo);
+ 
   }
 
   const nav = useNavigate();
 
   function registerFun() {
-    console.log(userInfo);
+    setUserInfo([...userInfo,newUser])
+    console.log("Registered users", userInfo);
+
     nav("/login");
   }
 
@@ -27,7 +36,7 @@ export default function Register() {
         type="email"
         onChange={userInformation}
         name="email"
-        value={userInfo.email}
+        value={newUser.email}
         placeholder="Email"
       />
       <br></br>
@@ -35,7 +44,7 @@ export default function Register() {
         type="text"
         onChange={userInformation}
         name="userName"
-        value={userInfo.userName}
+        value={newUser.userName}
         placeholder="User Name"
       />
       <br></br>
@@ -43,7 +52,7 @@ export default function Register() {
         type="password"
         onChange={userInformation}
         name="password"
-        value={userInfo.password}
+        value={newUser.password}
         placeholder="Password"
       />
       <br></br>

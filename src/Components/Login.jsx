@@ -22,11 +22,13 @@ export default function Login(){
     function loginFun(){
         const { email, password } = loginData;
 
-        if (email === userInfo.email && password === userInfo.password) {
-          nav("/home");
-        } else {
-          alert("Wrong entries. Please try again.");
-        }
+       const userExists = userInfo.find((user)=> user.email === email)
+
+       if(userExists && userExists.password === password){
+        nav('/home')
+       }else{
+        alert("Wrong entries")
+       }
     }
 
     return(
