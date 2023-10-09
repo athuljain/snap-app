@@ -11,6 +11,7 @@ export default function Shoes() {
 
   const addToLikedProducts = (product) => {
 
+    
     setLikeProducts([...likeProducts, product]);
 
   
