@@ -11,7 +11,7 @@ export default function Register() {
       ...prevUserInfo,
       [name]: value,
     }));
-    // console.log("userData",userInfo);
+    console.log("userData",userInfo);
   }
 
   const nav = useNavigate();

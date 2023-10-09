@@ -31,11 +31,17 @@ const PathtoMap = {
 
   function handleSearch(){
     const lowercaseInput = searchInput.toLowerCase()
+    
+    // if(PathtoMap.hasOwnProperty(lowercaseInput)){
+    //   return PathtoMap[lowercaseInput]
+    // }
+    // return "/not-found"
 
-    if(PathtoMap.hasOwnProperty(lowercaseInput)){
-      return PathtoMap[lowercaseInput]
+    for (const keyword in PathtoMap){
+      if(lowercaseInput.startsWith(keyword)){
+        return PathtoMap[keyword]
+      }
     }
-    return "/not-found"
 
   }
 
