@@ -25,6 +25,8 @@ function App() {
   const [json,setJson] = useState(SnapData)
   const [shoes,setShoes]=useState(ShoeProducts)
   const [likeProducts,setLikeProducts] = useState([])
+
+  const [searchInput, setSearchInput] = useState("");
   const [userInfo, setUserInfo] = useState({
     email: "",
     userName: "",
@@ -50,8 +52,10 @@ function App() {
     setShoes,
     likeProducts,
     setLikeProducts,
+    searchInput, setSearchInput,
     userInfo, setUserInfo,
     loginData, setLoginData,
+    
    
    
   }

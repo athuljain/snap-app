@@ -1,36 +1,49 @@
-import { useContext, useState } from "react";
+//import { useContext, useState } from "react";
 import { myContext } from "../Context";
 import { Link, useNavigate } from "react-router-dom";
 import "./Shoes.css";
+import { useContext } from "react";
 
 // All Shoe Products
 
 export default function Shoes() {
-  const { shoes,  likeProducts,setLikeProducts } = useContext(myContext);
+  const { shoes, likeProducts, setLikeProducts, searchInput, setSearchInput } =
+    useContext(myContext);
   console.log("Shoes Products", shoes);
 
   const addToLikedProducts = (product) => {
-
-    
     setLikeProducts([...likeProducts, product]);
-
-  
   };
-  console.log("shoes page",likeProducts);
+  console.log("shoes page", likeProducts);
+  
 
+  // function handleSearch() {
+  //   if (searchInput.toLowerCase().includes("adidas")) {
+  //     return "/adidas";
+  //   } else if (searchInput.toLowerCase().includes("nike")) {
+  //     return "/nike";
+  //   }
+  // }
+const PathtoMap = {
+  adidas : "/adidas",
+  nike : '/nike'
+}
 
+  function handleSearch(){
+    const lowercaseInput = searchInput.toLowerCase()
 
-  const [searchInput, setSearchInput] = useState("");
-
-  function handleSearch() {
-    if (searchInput.toLowerCase().includes("adidas")) {
-      return "/adidas";
-    } else if (searchInput.toLowerCase().includes("nike")) {
-      return "/nike";
+    if(PathtoMap.hasOwnProperty(lowercaseInput)){
+      return PathtoMap[lowercaseInput]
     }
+    return "/not-found"
+
   }
 
-  const nav=useNavigate()
+
+
+
+
+  const nav = useNavigate();
 
   return (
     <div>
@@ -49,9 +62,13 @@ export default function Shoes() {
       <>
         <Link to={"/nike"}>Nike Shoes... </Link>
         <Link to={"/adidas"}>Adidas Shoes...</Link> <br></br>
-        <button onClick={()=>{ nav('/likeproducts')}} >Like Items</button>
-
-
+        <button
+          onClick={() => {
+            nav("/likeproducts");
+          }}
+        >
+          Like Items
+        </button>
       </>
       <h1>Shoes Products ...</h1>
       <div className="containerMain">
@@ -60,7 +77,7 @@ export default function Shoes() {
             <img src={data.img} alt="img"></img>
             <h1>{data.name}</h1>
             <h3>Brand : {data.brand}</h3>
-            <button onClick={()=> addToLikedProducts((data))}>Like</button>
+            <button onClick={() => addToLikedProducts(data)}>Like</button>
           </div>
         ))}
       </div>

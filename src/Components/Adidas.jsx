@@ -2,10 +2,14 @@ import { useContext } from "react";
 import { myContext } from "../Context";
 
 export default function Adidas (){
-    const { shoes } = useContext(myContext);
+    const { shoes,likeProducts, setLikeProducts, } = useContext(myContext);
 
     const AdidasProduct = shoes.filter((product) => product.brand === "Adidas");
     console.log("Adidas Product", AdidasProduct);
+
+    function addToLikedProducts(product){
+      setLikeProducts([...likeProducts,product])
+    }
   
     return(
         <div>
@@ -17,7 +21,7 @@ export default function Adidas (){
             <img src={data.img} alt="img"></img>
             <h1>{data.name}</h1>
             <h3>Brand : {data.brand}</h3>
-            <button>Like</button>
+            <button onClick={() => addToLikedProducts(data)}> Like</button>
           </div>
         ))}
       </div>
