@@ -1,14 +1,10 @@
-import { useState } from "react";
+import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import { myContext } from "../Context";
 
 export default function Register(){
 
-
-    const [userInfo, setUserInfo] = useState({
-        email: "",
-        userName: "",
-        password: "",
-      });
+const {userInfo,setUserInfo}=useContext(myContext)
 
       function userInformation(e){
 
