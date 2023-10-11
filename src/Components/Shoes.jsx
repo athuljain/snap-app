@@ -7,12 +7,18 @@ import { useContext } from "react";
 // All Shoe Products
 
 export default function Shoes() {
-  const { shoes, likeProducts, setLikeProducts, searchInput, setSearchInput } =
+  const { shoes, likeProducts, setLikeProducts, searchInput, setSearchInput ,likeCond,setLikeCond} =
     useContext(myContext);
   console.log("Shoes Products", shoes);
 
   const addToLikedProducts = (product) => {
-    setLikeProducts([...likeProducts, product]);
+    if(product && (likeCond === false)){
+      setLikeProducts([...likeProducts, product]);
+      setLikeCond(true)
+    } else {
+      setLikeCond(false)
+    }
+    
   };
   console.log("shoes page", likeProducts);
   
@@ -83,7 +89,7 @@ const PathtoMap = {
             <img src={data.img} alt="img"></img>
             <h1>{data.name}</h1>
             <h3>Brand : {data.brand}</h3>
-            <button onClick={() => addToLikedProducts(data)}>Like</button>
+            <button onClick={() => addToLikedProducts(data)}>{likeCond ? "Unlike" : "Like"}</button>
           </div>
         ))}
       </div>

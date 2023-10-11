@@ -1,41 +1,41 @@
-import { useContext } from "react"
-import { myContext } from "../Context"
+
+
+import { useContext, useState } from "react"
+
 import { useNavigate } from "react-router-dom";
+import { myContext } from "../Context";
 
 export default function Login(){
+    const {user}=useContext(myContext)
 
-    const {userInfo,loginData, setLoginData} = useContext(myContext)
-    console.log(userInfo);
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    
     const nav=useNavigate()
 
-    function LoginChange(e){
-        const {name , value}= e.target;
-        setLoginData((prevData)=>({
-            ...prevData,
-            [name]: value
-        }))
+
+    function loginBtn(){
+        if(user.find((userData)=>userData.email === email && userData.password === password)){
+           
+            alert("Login successful !!!")
+            nav("/home")
+        }else{
+            alert("invalid email or password")
+        }
+        
     }
 
-    console.log(loginData);
 
-
-    function loginFun(){
-        const { email, password } = loginData;
-
-       const userExists = userInfo.find((user)=> user.email === email)
-
-       if(userExists && userExists.password === password){
-        nav('/home')
-       }else{
-        alert("Wrong entries")
-       }
-    }
 
     return(
         <div>
-            <input type="email" name="email" value={loginData.email} onChange={LoginChange} placeholder="email" />
-            <input type="text" name="password" value={loginData.password} onChange={LoginChange}  placeholder="password" />
-            <button onClick={loginFun} >Login :</button>
+            <h1>Login Page</h1>
+<div>
+<input type="email" placeholder="Email" value={email} onChange={(e)=> setEmail(e.target.value)} />
+<input type="password" placeholder="Password" value={password} onChange={(e)=> setPassword(e.target.value)} />
+<br></br>
+<button onClick={loginBtn} >Login</button>
+</div>
         </div>
     )
 }

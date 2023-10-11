@@ -1,63 +1,65 @@
-import { useContext, useState } from "react";
+
+
+import { useContext, useState } from "react"
+
 import { useNavigate } from "react-router-dom";
 import { myContext } from "../Context";
 
-export default function Register() {
-  const { userInfo, setUserInfo,newUser, setNewUser } = useContext(myContext);
+export default function Register(){
 
-  // const [newUser, setNewUser] = useState({
-  //   email: "",
-  //   userName: "",
-  //   password: "",
-  // });
+    const {user, setUser} = useContext(myContext)
+
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+
+    const nav=useNavigate()
 
 
-  function userInformation(e) {
-    const { name, value } = e.target;
-    setNewUser((prevUser) => ({
-      ...prevUser,
-      [name]: value,
-    }));
- 
-  }
+    const handleButtonClick = () => {
+        const userData = {  name,email,password,
+        };
+        setUser([...user,userData]  );
+       
+        nav("/login");
+        console.log("hlooo",user);
 
-  const nav = useNavigate();
+      };
+      
 
-  function registerFun() {
-    setUserInfo([...userInfo,newUser])
-    console.log("Registered users", userInfo);
-
-    nav("/login");
-  }
-
-  return (
-    <div>
-      <input
-        type="email"
-        onChange={userInformation}
-        name="email"
-        value={newUser.email}
-        placeholder="Email"
-      />
-      <br></br>
-      <input
-        type="text"
-        onChange={userInformation}
-        name="userName"
-        value={newUser.userName}
-        placeholder="User Name"
-      />
-      <br></br>
-      <input
-        type="password"
-        onChange={userInformation}
-        name="password"
-        value={newUser.password}
-        placeholder="Password"
-      />
-      <br></br>
-
-      <button onClick={registerFun}>Register </button>
-    </div>
-  );
+    return(
+        <div>
+            <h1>Register </h1>
+            <div >
+        <input
+          
+          type="text"
+          placeholder="Name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
+        <br />
+       
+        <input
+          
+          type="email"
+          placeholder="Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <br />
+        <input
+          
+          type="password"
+          placeholder="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        <br />
+        <button  onClick={handleButtonClick} type="submit">
+          Submit 
+        </button>
+      </div>
+        </div>
+    )
 }

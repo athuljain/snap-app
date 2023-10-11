@@ -27,24 +27,26 @@ function App() {
   const [likeProducts,setLikeProducts] = useState([])
 
   const [searchInput, setSearchInput] = useState("");
-  const [userInfo, setUserInfo] = useState([{
-    email: "",
-    userName: "",
-    password: "",
-  }]);
-  const [newUser, setNewUser] = useState({
-    email: "",
-    userName: "",
-    password: "",
-  });
+  // const [userInfo, setUserInfo] = useState([{
+  //   email: "",
+  //   userName: "",
+  //   password: "",
+  // }]);
+  // const [newUser, setNewUser] = useState({
+  //   email: "",
+  //   userName: "",
+  //   password: "",
+  // });
 
 
 
-  const [loginData, setLoginData] = useState({
-    email: "",
-    password: "",
-  });
+  // const [loginData, setLoginData] = useState({
+  //   email: "",
+  //   password: "",
+  // });
+const [likeCond,setLikeCond] =useState(false)
 
+const [user, setUser] = useState([]);
   
 
  
@@ -61,10 +63,9 @@ function App() {
     likeProducts,
     setLikeProducts,
     searchInput, setSearchInput,
-    userInfo, setUserInfo,
-    loginData, setLoginData,
-    newUser, setNewUser,
+    likeCond,setLikeCond,
     
+    user, setUser
    
    
   }
