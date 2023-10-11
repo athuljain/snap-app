@@ -7,24 +7,18 @@ import { useContext } from "react";
 // All Shoe Products
 
 export default function Shoes() {
-  const { shoes, likeProducts, setLikeProducts, searchInput, setSearchInput ,} =
+  const { shoes, likeProducts, setLikeProducts, searchInput, setSearchInput } =
     useContext(myContext);
   console.log("Shoes Products", shoes);
 
   const addToLikedProducts = (product) => {
-    if(likeProducts.includes(product)){
-      
-      setLikeProducts(likeProducts.filter((shoe)=> shoe !== product));
-      
+    if (likeProducts.includes(product)) {
+      setLikeProducts(likeProducts.filter((shoe) => shoe !== product));
     } else {
-      
-      setLikeProducts([...likeProducts,product])
-        
+      setLikeProducts([...likeProducts, product]);
     }
-    
   };
   console.log("shoes page", likeProducts);
-  
 
   // function handleSearch() {
   //   if (searchInput.toLowerCase().includes("adidas")) {
@@ -33,30 +27,25 @@ export default function Shoes() {
   //     return "/nike";
   //   }
   // }
-const PathtoMap = {
-  adidas : "/adidas",
-  nike : '/nike'
-}
+  const PathtoMap = {
+    adidas: "/adidas",
+    nike: "/nike",
+  };
 
-  function handleSearch(){
-    const lowercaseInput = searchInput.toLowerCase()
-    
+  function handleSearch() {
+    const lowercaseInput = searchInput.toLowerCase();
+
     // if(PathtoMap.hasOwnProperty(lowercaseInput)){
     //   return PathtoMap[lowercaseInput]
     // }
     // return "/not-found"
 
-    for (const keyword in PathtoMap){
-      if(lowercaseInput.startsWith(keyword)){
-        return PathtoMap[keyword]
+    for (const keyword in PathtoMap) {
+      if (lowercaseInput.startsWith(keyword)) {
+        return PathtoMap[keyword];
       }
     }
-
   }
-
-
-
-
 
   const nav = useNavigate();
 
@@ -92,7 +81,9 @@ const PathtoMap = {
             <img src={data.img} alt="img"></img>
             <h1>{data.name}</h1>
             <h3>Brand : {data.brand}</h3>
-            <button onClick={() => addToLikedProducts(data)}>{likeProducts.includes(data) ? "Unlike" : "Like"}</button>
+            <button onClick={() => addToLikedProducts(data)}>
+              {likeProducts.includes(data) ? "Unlike" : "Like"}
+            </button>
           </div>
         ))}
       </div>
