@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { myContext } from "../Context";
 
 export default function Login() {
-  const { user } = useContext(myContext);
+  const { user,setLogUser } = useContext(myContext);
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -12,11 +12,11 @@ export default function Login() {
   const nav = useNavigate();
 
   function loginBtn() {
-    if (
-      user.find(
+    const loggedUser=user.find(
         (userData) => userData.email === email && userData.password === password
       )
-    ) {
+    if(loggedUser){
+      setLogUser(loggedUser)
       alert("Login successful !!!");
       nav("/home");
     } else {

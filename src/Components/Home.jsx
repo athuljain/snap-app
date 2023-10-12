@@ -9,12 +9,16 @@ export default function Home() {
 
   // const { snap } = useContext(myContext);
   // console.log(snap);
-  const data = useContext(myContext);
-  console.log(data);
+  // const data = useContext(myContext);
+  // console.log(data);
+  const {logUser}=useContext(myContext)
+  console.log("loguser",logUser);
+  console.log("logUserName",logUser.name);
 
   return (
     <div>
       <h1>Home Page</h1>
+      <h4>welcome {logUser.name}</h4>
 
       <>
         <button onClick={() => navigate("/jsonDatas")}>Context Datas</button>
