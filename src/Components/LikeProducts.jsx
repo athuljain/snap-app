@@ -2,8 +2,13 @@ import { useContext } from "react";
 import { myContext } from "../Context";
 
 export default function LikeProducts() {
-  const { likeProducts } = useContext(myContext);
+  const { likeProducts,setLikeProducts } = useContext(myContext);
   console.log("like product page", likeProducts);
+
+  function UnlikeBtn(product){
+     setLikeProducts(likeProducts.filter((shoe) => shoe !== product));
+  }
+
   return (
     <div>
       <h1>Like Products.....</h1>
@@ -13,6 +18,7 @@ export default function LikeProducts() {
             <img src={data.img} alt="img"></img>
             <h1>{data.name}</h1>
             <h3>Brand : {data.brand}</h3>
+            <button onClick={()=>UnlikeBtn(data)} >Unlike</button>
           </div>
         ))}
       </div>

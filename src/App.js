@@ -29,7 +29,7 @@ function App() {
 
   // const [likeCond, setLikeCond] = useState(false);
   const [user, setUser] = useState([]);
-  const[logUser,setLogUser]=useState([])
+  const [logUser, setLogUser] = useState([]);
 
   const values = {
     snap,
@@ -43,13 +43,12 @@ function App() {
     setLikeProducts,
     searchInput,
     setSearchInput,
-
     // likeCond,
     // setLikeCond,
-
     user,
     setUser,
-    logUser,setLogUser
+    logUser,
+    setLogUser,
   };
 
   // console.log("app.",likeProducts);
