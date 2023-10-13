@@ -2,10 +2,20 @@ import { useContext } from "react";
 import { myContext } from "../Context";
 
 export default function Nike() {
-  const { shoes } = useContext(myContext);
+  const { shoes ,likeProducts, setLikeProducts,} = useContext(myContext);
 
   const NikeShoes = shoes.filter((product) => product.brand === "Nike");
   console.log("Nike Products...", NikeShoes);
+
+
+  const addToLikedProducts = (product) => {
+    if (likeProducts.includes(product)) {
+      setLikeProducts(likeProducts.filter((shoe) => shoe !== product));
+    } else {
+      setLikeProducts([...likeProducts, product]);
+    }
+  };
+
   return (
     <div>
       <div className="Container">
@@ -16,7 +26,9 @@ export default function Nike() {
               <img src={data.img} alt="img"></img>
               <h1>{data.name}</h1>
               <h3>Brand : {data.brand}</h3>
-              <button>Like</button>
+              <button onClick={() => addToLikedProducts(data)}>
+              {likeProducts.includes(data) ? "Unlike" : "Like"}
+            </button>
             </div>
           ))}
         </div>

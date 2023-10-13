@@ -15,6 +15,7 @@ import Nike from "./Components/Nike";
 import LikeProducts from "./Components/LikeProducts";
 import Register from "./Components/Register";
 import Login from "./Components/Login";
+import Dropdown from "./Components/Dropdown";
 
 function App() {
   const data = "kadavanthra";
@@ -26,7 +27,7 @@ function App() {
 
   const [searchInput, setSearchInput] = useState("");
 
-  const [likeCond, setLikeCond] = useState(false);
+  // const [likeCond, setLikeCond] = useState(false);
   const [user, setUser] = useState([]);
   const[logUser,setLogUser]=useState([])
 
@@ -43,8 +44,8 @@ function App() {
     searchInput,
     setSearchInput,
 
-    likeCond,
-    setLikeCond,
+    // likeCond,
+    // setLikeCond,
 
     user,
     setUser,
@@ -57,6 +58,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <myContext.Provider value={values}>
+          <Dropdown />
           <Routes>
             <Route path="/" element={<Register />} />
             <Route path="/login" element={<Login />} />

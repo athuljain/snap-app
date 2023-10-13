@@ -7,9 +7,13 @@ export default function Adidas (){
     const AdidasProduct = shoes.filter((product) => product.brand === "Adidas");
     console.log("Adidas Product", AdidasProduct);
 
-    function addToLikedProducts(product){
-      setLikeProducts([...likeProducts,product])
-    }
+    const addToLikedProducts = (product) => {
+      if (likeProducts.includes(product)) {
+        setLikeProducts(likeProducts.filter((shoe) => shoe !== product));
+      } else {
+        setLikeProducts([...likeProducts, product]);
+      }
+    };
   
     return(
         <div>
@@ -21,7 +25,9 @@ export default function Adidas (){
             <img src={data.img} alt="img"></img>
             <h1>{data.name}</h1>
             <h3>Brand : {data.brand}</h3>
-            <button onClick={() => addToLikedProducts(data)}> Like</button>
+            <button onClick={() => addToLikedProducts(data)}>
+              {likeProducts.includes(data) ? "Unlike" : "Like"}
+            </button>
           </div>
         ))}
       </div>

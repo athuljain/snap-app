@@ -1,0 +1,22 @@
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .sub-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+  }
+  
+  .dropdown:hover .sub-links {
+    display: block;
+  }
+  
+  .sub-links a {
+    display: block; 
+    margin: 5px 0;  
+  }
+  

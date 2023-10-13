@@ -20,6 +20,8 @@ export default function Home() {
       <h1>Home Page</h1>
       <h4>welcome {logUser.name}</h4>
 
+      
+
       <>
         <button onClick={() => navigate("/jsonDatas")}>Context Datas</button>
         <button onClick={() => navigate("/fetch")}>Fetch Datas</button>
