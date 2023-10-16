@@ -5,10 +5,10 @@ export default function FetchDatas() {
 
   useEffect(() => {
     // Fetch the first 10 data items from the API
-    fetch("https://jsonplaceholder.typicode.com/photos?_limit=10")
+    fetch("http://blackfarm.in/react/view_filims.php")
       .then((response) => response.json())
       .then((data) => {
-        setImages(data);
+         setImages(data);
         console.log("fetch data:", data);
       })
       .catch((error) => {
@@ -19,11 +19,15 @@ export default function FetchDatas() {
   return (
     <div>
       <h1>Fetch Datas</h1>
-      <div>
+      
+
+      <div style={{backgroundColor:"red"}}>
         {images.map((data) => (
-          <div key={data.id}>
-            <p>Title: {data.title}</p>
-            <img src={data.url} alt={data.title} />
+          <div style={{backgroundColor:"white"}} key={data.id}>
+            <h4>Title: {data.name}</h4>
+            <p>Description :{data.description}</p>
+            <img src={data.image} alt={data.title} />
+
           </div>
         ))}
       </div>
