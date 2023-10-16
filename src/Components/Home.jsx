@@ -26,6 +26,7 @@ export default function Home() {
         <button onClick={() => navigate("/jsonDatas")}>Context Datas</button>
         <button onClick={() => navigate("/fetch")}>Fetch Datas</button>
         <button onClick={() => navigate("/json")}>Json Data</button> <br></br>
+        <button onClick={()=> navigate("/countEffect")}>Count</button>
       </>
 
       <Link to={"/shoes"}>Shoes...</Link>

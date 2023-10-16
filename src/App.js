@@ -16,6 +16,7 @@ import LikeProducts from "./Components/LikeProducts";
 import Register from "./Components/Register";
 import Login from "./Components/Login";
 import Dropdown from "./Components/Dropdown";
+import Count from "./Components/Count";
 
 function App() {
   const data = "kadavanthra";
@@ -65,11 +66,15 @@ function App() {
             <Route path="/home" element={<Home />} />
             <Route path="/jsonDatas" element={<JsonData />} />
             <Route path="/fetch" element={<FetchDatas />} />
+            <Route path="/countEffect" element={<Count />} />
             <Route path="/json" element={<JsonComponent />} />
             <Route path="/shoes" element={<Shoes />} />
             <Route path="/nike" element={<Nike />} />
             <Route path="adidas" element={<Adidas />} />
             <Route path="/likeproducts" element={<LikeProducts />} />
+
+            
+
           </Routes>
         </myContext.Provider>
       </BrowserRouter>
