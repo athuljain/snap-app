@@ -3,6 +3,8 @@
 import { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { myContext } from "../Context";
+import homeImg from "../Pics/mern1.jpg"
+
 
 export default function Home() {
   const navigate = useNavigate();
@@ -27,6 +29,10 @@ export default function Home() {
         <button onClick={() => navigate("/fetch")}>Fetch Datas</button>
         <button onClick={() => navigate("/json")}>Json Data</button> <br></br>
         <button onClick={()=> navigate("/countEffect")}>Count</button>
+        <button onClick={()=> navigate("/useMemo")}>useMemo & </button>
+
+
+        <img src={homeImg} alt="helo" />
       </>
 
       <Link to={"/shoes"}>Shoes...</Link>

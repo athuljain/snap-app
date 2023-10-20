@@ -17,6 +17,8 @@ import Register from "./Components/Register";
 import Login from "./Components/Login";
 import Dropdown from "./Components/Dropdown";
 import Count from "./Components/Count";
+import SpecificProduct from "./Components/SpecificProduct";
+import WithUseMemo from "./Components/WithUseMemo";
 
 function App() {
   const data = "kadavanthra";
@@ -31,6 +33,7 @@ function App() {
   // const [likeCond, setLikeCond] = useState(false);
   const [user, setUser] = useState([]);
   const [logUser, setLogUser] = useState([]);
+  const [selectedProduct, setSelectedProduct] = useState(null);
 
   const values = {
     snap,
@@ -50,6 +53,7 @@ function App() {
     setUser,
     logUser,
     setLogUser,
+    selectedProduct, setSelectedProduct,
   };
 
   // console.log("app.",likeProducts);
@@ -72,7 +76,9 @@ function App() {
             <Route path="/nike" element={<Nike />} />
             <Route path="adidas" element={<Adidas />} />
             <Route path="/likeproducts" element={<LikeProducts />} />
-
+            <Route path="/specificproduct" element={<SpecificProduct product={selectedProduct} />} />
+            <Route path="/useMemo" element={<WithUseMemo />} />
+            
             
 
           </Routes>

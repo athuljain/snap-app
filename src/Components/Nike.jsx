@@ -1,11 +1,13 @@
-import { useContext, useState } from "react";
+import { useContext, } from "react";
 import { myContext } from "../Context";
-import { Link } from "react-router-dom";
-import SpecificProduct from "./SpecificProduct";
+import { Link, useNavigate } from "react-router-dom";
+
 
 export default function Nike() {
-  const { shoes, likeProducts, setLikeProducts, searchInput, setSearchInput } =
+  const { shoes, likeProducts, setLikeProducts, searchInput, setSearchInput, setSelectedProduct } =
     useContext(myContext);
+
+    const nav=useNavigate()
 
   const NikeShoes = shoes.filter((product) => product.brand === "Nike");
   console.log("Nike Products...", NikeShoes);
@@ -18,7 +20,7 @@ export default function Nike() {
     }
   };
 
-  const [selectedProduct, setSelectedProduct] = useState(null);
+  
 
   function handleSearch() {
     const searchedProduct = NikeShoes.find(
@@ -28,17 +30,12 @@ export default function Nike() {
     if (searchedProduct) {
       //console.log("Found product:", searchedProduct);
       setSelectedProduct(searchedProduct);
+      nav('/specificproduct')
     } else {
       console.log("Product not found");
     }
   }
-  if (selectedProduct) {
-    return (
-      <div>
-        <SpecificProduct product={selectedProduct} />
-      </div>
-    );
-  }
+ 
 
   return (
     <div>
