@@ -4,7 +4,7 @@ import { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { myContext } from "../Context";
 import homeImg from "../Pics/mern1.jpg"
-
+import reactlogo from "../logo.svg"
 
 export default function Home() {
   const navigate = useNavigate();
@@ -33,6 +33,8 @@ export default function Home() {
 
 
         <img src={homeImg} alt="helo" />
+        <img src={reactlogo} alt="hi" />
+
       </>
 
       <Link to={"/shoes"}>Shoes...</Link>
