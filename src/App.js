@@ -74,7 +74,7 @@ function App() {
             <Route path="/json" element={<JsonComponent />} />
             <Route path="/shoes" element={<Shoes />} />
             <Route path="/nike" element={<Nike />} />
-            <Route path="adidas" element={<Adidas />} />
+            <Route path="/adidas" element={<Adidas />} />
             <Route path="/likeproducts" element={<LikeProducts />} />
             <Route path="/specificproduct" element={<SpecificProduct product={selectedProduct} />} />
             <Route path="/useMemo" element={<WithUseMemo />} />

@@ -20,33 +20,33 @@ export default function Shoes() {
   };
   console.log("shoes page", likeProducts);
 
-  function handleSearch() {
-    if (searchInput.toLowerCase().includes("adidas")) {
-      return "/adidas";
-    } else if (searchInput.toLowerCase().includes("nike")) {
-      return "/nike";
-    }
-  }
-
-  // const PathtoMap = {
-  //   adidas: "/adidas",
-  //   nike: "/nike",
-  // };
-
   // function handleSearch() {
-  //   const lowercaseInput = searchInput.toLowerCase();
-
-  //   // if(PathtoMap.hasOwnProperty(lowercaseInput)){
-  //   //   return PathtoMap[lowercaseInput]
-  //   // }
-  //   // return "/not-found"
-
-  //   for (const keyword in PathtoMap) {
-  //     if (lowercaseInput.startsWith(keyword)) {
-  //       return PathtoMap[keyword];
-  //     }
+  //   if (searchInput.toLowerCase().includes("adidas")) {
+  //     return "/adidas";
+  //   } else if (searchInput.toLowerCase().includes("nike")) {
+  //     return "/nike";
   //   }
   // }
+
+  const PathtoMap = {
+    adi: "/adidas",
+    ni: "/nike",
+  };
+
+  function handleSearch() {
+    const lowercaseInput = searchInput.toLowerCase();
+
+    // if(PathtoMap.hasOwnProperty(lowercaseInput)){
+    //   return PathtoMap[lowercaseInput]
+    // }
+    // return "/not-found"
+
+    for (const keyword in PathtoMap) {
+      if (lowercaseInput.startsWith(keyword)) {
+        return PathtoMap[keyword];
+      }
+    }
+  }
 
   const nav = useNavigate();
 
