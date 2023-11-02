@@ -30,6 +30,7 @@ export default function Home() {
         <button onClick={() => navigate("/json")}>Json Data</button> <br></br>
         <button onClick={()=> navigate("/countEffect")}>Count</button>
         <button onClick={()=> navigate("/useMemo")}>useMemo & </button>
+        <button onClick={()=> navigate('/cart')}>Cart</button>
 
 
         <img src={homeImg} alt="helo" />

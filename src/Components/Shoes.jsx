@@ -77,11 +77,14 @@ export default function Shoes() {
       </>
       <h1>Shoes Products ...</h1>
       <div className="containerMain">
+      
         {shoes.map((data, index) => (
           <div key={index}>
+            <Link to={`/view-product/${data.id}`}>
             <img src={data.img} alt="img"></img>
             <h1>{data.name}</h1>
             <h3>Brand : {data.brand}</h3>
+          </Link>
             <button onClick={() => addToLikedProducts(data)}>
               {likeProducts.includes(data) ? "Unlike" : "Like"}
             </button>

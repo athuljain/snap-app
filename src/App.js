@@ -19,6 +19,8 @@ import Dropdown from "./Components/Dropdown";
 import Count from "./Components/Count";
 import SpecificProduct from "./Components/SpecificProduct";
 import WithUseMemo from "./Components/WithUseMemo";
+import Cart from "./Components/Cart";
+import ViewProduct from "./Components/ViewProduct";
 
 function App() {
   const data = "kadavanthra";
@@ -78,10 +80,13 @@ function App() {
             <Route path="/likeproducts" element={<LikeProducts />} />
             <Route path="/specificproduct" element={<SpecificProduct product={selectedProduct} />} />
             <Route path="/useMemo" element={<WithUseMemo />} />
-            
+            <Route path="/cart" element={<Cart />} />
+
+            <Route path="/view-product/:id" element={<ViewProduct />}/>
             
 
           </Routes>
+          
         </myContext.Provider>
       </BrowserRouter>
     </div>

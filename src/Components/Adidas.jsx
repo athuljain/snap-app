@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { myContext } from "../Context";
+import { Link } from "react-router-dom";
 
 export default function Adidas (){
     const { shoes,likeProducts, setLikeProducts, } = useContext(myContext);
@@ -21,10 +22,12 @@ export default function Adidas (){
       <h1>Adidas Shoes...</h1>
       <div className="container">
         {AdidasProduct.map((data, index) => (
-          <div>
+          <div key={index}>
+            
             <img src={data.img} alt="img"></img>
             <h1>{data.name}</h1>
             <h3>Brand : {data.brand}</h3>
+            
             <button onClick={() => addToLikedProducts(data)}>
               {likeProducts.includes(data) ? "Unlike" : "Like"}
             </button>
