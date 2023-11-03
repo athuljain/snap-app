@@ -21,13 +21,13 @@ export default function Adidas (){
  <div className="Container">
       <h1>Adidas Shoes...</h1>
       <div className="container">
-        {AdidasProduct.map((data, index) => (
-          <div key={index}>
-            
+        {AdidasProduct.map((data) => (
+          <div>
+            <Link to={`/viewProducts/${data.id}`}>
             <img src={data.img} alt="img"></img>
             <h1>{data.name}</h1>
             <h3>Brand : {data.brand}</h3>
-            
+            </Link>
             <button onClick={() => addToLikedProducts(data)}>
               {likeProducts.includes(data) ? "Unlike" : "Like"}
             </button>
