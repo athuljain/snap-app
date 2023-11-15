@@ -10,6 +10,7 @@ export default function LikeProducts() {
      setLikeProducts(likeProducts.filter((shoe) => shoe !== product));
   }
 
+  
   return (
     <div>
       <h1>Like Products.....</h1>
