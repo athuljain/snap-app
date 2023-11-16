@@ -3,17 +3,21 @@ import React, { useState, useEffect } from "react";
 export default function FetchDatas() {
   const [images, setImages] = useState([]);
 
+  function getApi(){
+    fetch("http://blackfarm.in/react/view_filims.php")
+    .then((response) => response.json())
+    .then((data) => {
+       setImages(data);
+      console.log("fetch data:", data);
+    })
+    .catch((error) => {
+      console.error("Error fetching images:", error);
+    });
+  }
+
   useEffect(() => {
     // Fetch the first 10 data items from the API
-    fetch("http://blackfarm.in/react/view_filims.php")
-      .then((response) => response.json())
-      .then((data) => {
-         setImages(data);
-        console.log("fetch data:", data);
-      })
-      .catch((error) => {
-        console.error("Error fetching images:", error);
-      });
+   getApi();
   }, []);
 
   return (
