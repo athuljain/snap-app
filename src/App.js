@@ -17,7 +17,7 @@ import Register from "./Components/Register";
 import Login from "./Components/Login";
 import Dropdown from "./Components/Dropdown";
 import Count from "./Components/Count";
-// 
+//
 //import SpecificProduct from "./Components/SpecificProduct";
 import WithUseMemo from "./Components/WithUseMemo";
 import Cart from "./Components/Cart";
@@ -56,7 +56,8 @@ function App() {
     setUser,
     logUser,
     setLogUser,
-    selectedProduct, setSelectedProduct,
+    selectedProduct,
+    setSelectedProduct,
   };
 
   // console.log("app.",likeProducts);
@@ -83,11 +84,8 @@ function App() {
             <Route path="/useMemo" element={<WithUseMemo />} />
             <Route path="/cart" element={<Cart />} />
 
-            <Route path="/viewProducts/:id" element={<ViewProduct />}/>
-            
-
+            <Route path="/viewProducts/:id" element={<ViewProduct />} />
           </Routes>
-          
         </myContext.Provider>
       </BrowserRouter>
     </div>

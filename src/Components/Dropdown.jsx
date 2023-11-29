@@ -1,6 +1,6 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import "./Dropdown.css"
+import React from "react";
+import { Link } from "react-router-dom";
+import "./Dropdown.css";
 
 function Dropdown() {
   return (
@@ -10,7 +10,7 @@ function Dropdown() {
         <div className="sub-links">
           <Link to="/adidas">Adidas</Link>
           <Link to="/nike">Nike</Link>
-          <Link to="/shoes" >Home</Link>
+          <Link to="/shoes">Home</Link>
         </div>
       </li>
     </div>
