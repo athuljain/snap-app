@@ -22,6 +22,7 @@ import Count from "./Components/Count";
 import WithUseMemo from "./Components/WithUseMemo";
 import Cart from "./Components/Cart";
 import ViewProduct from "./Components/ViewProduct";
+import Todo from "./Components/Todo";
 
 function App() {
   const data = "kadavanthra";
@@ -67,6 +68,7 @@ function App() {
       <BrowserRouter>
         <myContext.Provider value={values}>
           <Dropdown />
+          <Todo />
           <Routes>
             <Route path="/" element={<Register />} />
             <Route path="/login" element={<Login />} />
