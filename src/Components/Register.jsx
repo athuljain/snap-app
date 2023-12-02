@@ -46,7 +46,7 @@ export default function Register() {
           onChange={(e) => setPassword(e.target.value)}
         />
         <br />
-        <button onClick={handleButtonClick} type="submit">
+        <button onClick={()=>handleButtonClick()} type="submit">
           Submit
         </button>
       </div>
