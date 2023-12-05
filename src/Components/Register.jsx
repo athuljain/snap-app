@@ -1,5 +1,4 @@
 import { useContext, useState } from "react";
-
 import { useNavigate } from "react-router-dom";
 import { myContext } from "../Context";
 
@@ -12,7 +11,16 @@ export default function Register() {
 
   const nav = useNavigate();
 
+  const isUserAlreadyRegistered = () => {
+    return user.find((userData) => userData.email === email);
+  };
+
   const handleButtonClick = () => {
+    if (isUserAlreadyRegistered()) {
+      alert("User already registered. Please use a different email.");
+      return;
+    }
+
     const userData = { name, email, password };
     setUser([...user, userData]);
 
@@ -46,7 +54,7 @@ export default function Register() {
           onChange={(e) => setPassword(e.target.value)}
         />
         <br />
-        <button onClick={()=>handleButtonClick()} type="submit">
+        <button onClick={() => handleButtonClick()} type="submit">
           Submit
         </button>
       </div>
