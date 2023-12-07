@@ -29,6 +29,7 @@ export default function Home() {
         <button onClick={() => navigate("/countEffect")}>Count</button>
         <button onClick={() => navigate("/useMemo")}>useMemo & </button>
         <button onClick={() => navigate("/cart")}>Cart</button>
+        <button onClick={()=>navigate("/editProduct")}>Edit Product</button>
         <img src={homeImg} alt="helo" />
         <img src={reactlogo} alt="hi" />
       </>

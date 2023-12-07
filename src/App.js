@@ -23,6 +23,7 @@ import WithUseMemo from "./Components/WithUseMemo";
 import Cart from "./Components/Cart";
 import ViewProduct from "./Components/ViewProduct";
 import Todo from "./Components/Todo";
+import EditProducts from "./Components/EditProducts";
 
 function App() {
   const data = "kadavanthra";
@@ -87,6 +88,7 @@ function App() {
             <Route path="/cart" element={<Cart />} />
 
             <Route path="/viewProducts/:id" element={<ViewProduct />} />
+            <Route path="/editProduct" element={<EditProducts />}/>
           </Routes>
         </myContext.Provider>
       </BrowserRouter>
