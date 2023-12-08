@@ -25,6 +25,8 @@ import ViewProduct from "./Components/ViewProduct";
 import Todo from "./Components/Todo";
 import EditProducts from "./Components/EditProducts";
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 function App() {
   const data = "kadavanthra";
 
