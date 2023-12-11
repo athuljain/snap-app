@@ -31,6 +31,9 @@ export default function Home() {
         <button onClick={() => navigate("/useMemo")}>useMemo & </button>
         <button onClick={() => navigate("/cart")}>Cart</button>
         <button onClick={()=>navigate("/editProduct")}>Edit Product</button>
+
+<button onClick={()=>navigate('/fact')}>Fact</button>
+
         <BodyScoll />
         <img src={homeImg} alt="helo" />
         <img src={reactlogo} alt="hi" />
