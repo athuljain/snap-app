@@ -26,7 +26,8 @@ import Todo from "./Components/Todo";
 import EditProducts from "./Components/EditProducts";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Fact from "./Components/Fact";
+
+import Factorial from "./Components/Fact";
 
 function App() {
   const data = "kadavanthra";
@@ -92,7 +93,7 @@ function App() {
 
             <Route path="/viewProducts/:id" element={<ViewProduct />} />
             <Route path="/editProduct" element={<EditProducts />}/>
-            <Route path="/fact" element={<Fact  />}/>
+            <Route path="/fact" element={<Factorial  />}/>
           </Routes>
         </myContext.Provider>
       </BrowserRouter>
