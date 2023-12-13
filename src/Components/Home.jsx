@@ -6,6 +6,7 @@ import { myContext } from "../Context";
 import homeImg from "../Pics/mern1.jpg";
 import reactlogo from "../logo.svg";
 import BodyScoll from "./BodyScoll";
+import Sum from "./Sum";
 
 export default function Home() {
   const navigate = useNavigate();
@@ -32,7 +33,9 @@ export default function Home() {
         <button onClick={() => navigate("/cart")}>Cart</button>
         <button onClick={()=>navigate("/editProduct")}>Edit Product</button>
 
-<button onClick={()=>navigate('/fact')}>Fact</button>
+<button onClick={()=>navigate('/fact')}>Fact</button> <br></br>
+
+        <Sum/> <br></br>
 
         <BodyScoll />
         <img src={homeImg} alt="helo" />
