@@ -15,7 +15,29 @@ export default function Register() {
     return user.find((userData) => userData.email === email);
   };
 
+  const isEmailValid=()=>{
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  }
+
+  const isPasswordValid = () => {
+    
+    return password.length >= 3;
+  };
+
   const handleButtonClick = () => {
+
+    if (!isEmailValid()) {
+      alert("Please enter a valid email address.");
+      return;
+    }
+
+    if (!isPasswordValid()) {
+      alert("Password should be at least 3 characters long.");
+      return;
+    }
+
+
     if (isUserAlreadyRegistered()) {
       alert("User already registered. Please use a different email.");
       return;
@@ -27,6 +49,7 @@ export default function Register() {
     nav("/login");
     console.log("hlooo", user);
   };
+  
 
   return (
     <div>
