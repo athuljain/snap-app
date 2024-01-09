@@ -28,6 +28,7 @@ import EditProducts from "./Components/EditProducts";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Factorial from "./Components/Fact";
+import Admin from "./Components/Admin";
 
 function App() {
   const data = "kadavanthra";
@@ -77,7 +78,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Register />} />
             <Route path="/login" element={<Login />} />
-
+            <Route path="/admin" element={<Admin />}/>
             <Route path="/home" element={<Home />} />
             <Route path="/jsonDatas" element={<JsonData />} />
             <Route path="/fetch" element={<FetchDatas />} />
