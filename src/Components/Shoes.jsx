@@ -67,6 +67,7 @@ export default function Shoes() {
           />
           <Link to={handleSearch()}>Search</Link>
         </div>
+        <Link to={"/search"}>Search Page</Link>
       </div>
 
       <>

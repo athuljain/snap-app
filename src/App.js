@@ -29,6 +29,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Factorial from "./Components/Fact";
 import Admin from "./Components/Admin";
+import Search from "./Components/Search";
 
 function App() {
   const data = "kadavanthra";
@@ -95,6 +96,7 @@ function App() {
             <Route path="/viewProducts/:id" element={<ViewProduct />} />
             <Route path="/editProduct" element={<EditProducts />}/>
             <Route path="/fact" element={<Factorial  />}/>
+            <Route path="/search" element={<Search />}/>
           </Routes>
         </myContext.Provider>
       </BrowserRouter>
