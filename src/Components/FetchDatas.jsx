@@ -19,7 +19,6 @@ export default function FetchDatas() {
     // Fetch the first 10 data items from the API
     getApi();
   }, []);
-
   return (
     <div>
       <h1>Fetch Datas</h1>
