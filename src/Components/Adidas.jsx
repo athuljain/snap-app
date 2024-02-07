@@ -17,7 +17,7 @@ export default function Adidas() {
   };
 
   return (
-    <div>
+    <div> 
       <div className="Container">
         <h1>Adidas Shoes...</h1>
         <div className="container">
