@@ -20,6 +20,7 @@ export default function LikeProducts() {
             <img src={data.img} alt="img"></img>
             <h1>{data.name}</h1>
             <h3>Brand : {data.brand}</h3>
+            <h3>Price:{data.price}</h3>
             <button onClick={()=>UnlikeBtn(data)} ><AiFillDislike/></button>
           </div>
         ))}
