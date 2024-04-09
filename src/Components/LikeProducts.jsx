@@ -6,36 +6,32 @@ export default function LikeProducts() {
   const { likeProducts, setLikeProducts } = useContext(myContext);
   console.log("like product page", likeProducts);
 
-  function UnlikeBtn(product) {
-    setLikeProducts(likeProducts.filter((shoe) => shoe !== product));
-  }
-
   function increaseQty(product) {
-    const updatedProducts = likeProducts.map((shoe) => {
-      if (shoe === product) {
-        return {
-          ...shoe,
-          qty: shoe.qty + 1,
-          price: shoe.price * 2 // Double the price when increasing quantity
-        };
+    const updatedProducts = likeProducts.map((item) => {
+      if (item === product) {
+        const updatedQty = item.qty + 1;
+        const updatedPrice = item.initialPrice * updatedQty; // Calculate price based on initial price and updated quantity
+        return { ...item, qty: updatedQty, price: updatedPrice };
       }
-      return shoe;
+      return item;
     });
     setLikeProducts(updatedProducts);
   }
 
   function decreaseQty(product) {
-    const updatedProducts = likeProducts.map((shoe) => {
-      if (shoe === product && shoe.qty > 0) {
-        return {
-          ...shoe,
-          qty: shoe.qty - 1,
-          price: shoe.price / 2 // Halve the price when decreasing quantity
-        };
+    const updatedProducts = likeProducts.map((item) => {
+      if (item === product && item.qty > 0) {
+        const updatedQty = item.qty - 1;
+        const updatedPrice = item.initialPrice * updatedQty; // Calculate price based on initial price and updated quantity
+        return { ...item, qty: updatedQty, price: updatedPrice };
       }
-      return shoe;
+      return item;
     });
     setLikeProducts(updatedProducts);
+  }
+
+  function UnlikeBtn(product) {
+    setLikeProducts(likeProducts.filter((shoe) => shoe !== product));
   }
 
   return (

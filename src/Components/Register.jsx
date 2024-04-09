@@ -3,7 +3,8 @@ import { useNavigate } from "react-router-dom";
 import { myContext } from "../Context";
 
 export default function Register() {
-  const { user, setUser } = useContext(myContext);
+  const { user, setUser,data } = useContext(myContext);
+  console.log(data);
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");

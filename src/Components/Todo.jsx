@@ -40,6 +40,7 @@ export default function Todo() {
         placeholder="Enter task"
       />
       <button onClick={addTodo}>
+      
         {editIndex !== null ? "Edit task" : "Add task"}
       </button>
       <br />
