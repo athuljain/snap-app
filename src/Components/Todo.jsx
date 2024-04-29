@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 
 export default function Todo() {
   const [task, setTask] = useState([]);
   const [inputTask, setInputTask] = useState("");
   const [editIndex, setEditIndex] = useState(null); // To track the index of the task being edited
-
+  const inputRef = useRef(null)
   function addTodo() {
     if (editIndex !== null) {
       // editIndex is not null, it means we are editing an existing task
@@ -15,12 +15,15 @@ export default function Todo() {
     } else {
       setTask([...task, inputTask]);
     }
+    setInputTask(""); // Clear input field after adding task
+    inputRef.current.focus(); // Focus on input field after adding task
     
   }
 
   function editTodo(index) {
     setEditIndex(index);
     setInputTask(task[index]);
+    inputRef.current.focus();
   }
 
   function deleteTodo(index) {
@@ -29,15 +32,24 @@ export default function Todo() {
     setTask(updatedTask);
   }
 
+  function handleKeyDown(event) {
+    if (event.key === "Enter") {
+      addTodo();
+    }
+  }
+
+
   console.log("task",task);
   console.log("editIndex",editIndex);
 
   return (
     <div>
       <input
+       ref={inputRef}
         value={inputTask}
         onChange={(e) => setInputTask(e.target.value)}
         placeholder="Enter task"
+        onKeyDown={handleKeyDown}
       />
       <button onClick={addTodo}>
       
