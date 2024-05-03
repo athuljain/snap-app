@@ -32,7 +32,7 @@ export default function Home() {
         <button onClick={() => navigate("/useMemo")}>useMemo & </button>
         <button onClick={() => navigate("/cart")}>Cart</button>
         <button onClick={()=>navigate("/editProduct")}>Edit Product</button>
-
+        <button onClick={()=>navigate("/input")}>React input example</button>
 <button onClick={()=>navigate('/fact')}>Fact</button> <br></br>
 
         <Sum/> <br></br>
