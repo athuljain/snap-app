@@ -1,8 +1,8 @@
 //import { useContext, useState } from "react";
 import { myContext } from "../Context";
 import { Link, useNavigate } from "react-router-dom";
-import { FcLikePlaceholder } from "react-icons/fc";
-import { FcLike } from "react-icons/fc";
+// import { FcLikePlaceholder } from "react-icons/fc";
+// import { FcLike } from "react-icons/fc";
 import { AiTwotoneLike } from "react-icons/ai";
 import { AiTwotoneDislike } from "react-icons/ai";
 

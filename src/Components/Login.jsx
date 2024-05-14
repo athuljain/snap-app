@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 
 import { useNavigate } from "react-router-dom";
 import { myContext } from "../Context";
-import BodyScoll from "./BodyScoll";
+// import BodyScoll from "./BodyScoll";
 
 export default function Login() {
   const { user,setLogUser } = useContext(myContext);
