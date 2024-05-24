@@ -34,6 +34,7 @@ export default function FetchDatas() {
           </div>
         ))}
       </div> */}
+      
 
 <Card style={{ width: '18rem' }}>
   {images.map((data)=>(
