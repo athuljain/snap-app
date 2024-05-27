@@ -10,8 +10,7 @@ export default function LikeProducts() {
     const updatedProducts = likeProducts.map((item) => {
       if (item === product) {
         const updatedQty = item.qty + 1;
-        const updatedPrice = item.price * updatedQty; // Calculate price based on initial price and updated quantity
-        return { ...item, qty: updatedQty, price: updatedPrice };
+        return { ...item, qty: updatedQty };
       }
       return item;
     });
@@ -22,8 +21,7 @@ export default function LikeProducts() {
     const updatedProducts = likeProducts.map((item) => {
       if (item === product && item.qty > 0) {
         const updatedQty = item.qty - 1;
-        const updatedPrice = item.price * updatedQty; // Calculate price based on initial price and updated quantity
-        return { ...item, qty: updatedQty, price: updatedPrice };
+        return { ...item, qty: updatedQty };
       }
       return item;
     });
@@ -43,7 +41,7 @@ export default function LikeProducts() {
             <img src={data.img} alt="img" />
             <h1>{data.name}</h1>
             <h3>Brand : {data.brand}</h3>
-            <h3>Price: {data.price}</h3>
+            <h3>Price: {data.price * data.qty}</h3> {/* Calculate total price dynamically */}
             <h3>Qty: {data.qty}</h3>
             <button onClick={() => increaseQty(data)}>+</button>
             <button onClick={() => decreaseQty(data)} disabled={data.qty === 0}>-</button> {/* Disable when quantity is 0 */}
