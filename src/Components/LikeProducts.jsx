@@ -10,7 +10,7 @@ export default function LikeProducts() {
     const updatedProducts = likeProducts.map((item) => {
       if (item === product) {
         const updatedQty = item.qty + 1;
-        const updatedPrice = item.initialPrice * updatedQty; // Calculate price based on initial price and updated quantity
+        const updatedPrice = item.price * updatedQty; // Calculate price based on initial price and updated quantity
         return { ...item, qty: updatedQty, price: updatedPrice };
       }
       return item;
@@ -22,7 +22,7 @@ export default function LikeProducts() {
     const updatedProducts = likeProducts.map((item) => {
       if (item === product && item.qty > 0) {
         const updatedQty = item.qty - 1;
-        const updatedPrice = item.initialPrice * updatedQty; // Calculate price based on initial price and updated quantity
+        const updatedPrice = item.price * updatedQty; // Calculate price based on initial price and updated quantity
         return { ...item, qty: updatedQty, price: updatedPrice };
       }
       return item;
