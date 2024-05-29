@@ -92,7 +92,7 @@ export default function Shoes() {
             <h3>Brand : {data.brand}</h3>
           </Link>
             <button onClick={() => addToLikedProducts(data)}>
-              {likeProducts.includes(data) ? <AiTwotoneDislike />  : <AiTwotoneLike /> }
+              {likeProducts.includes(data) ? "Unlike"  : "like" }
             </button>
           </div>
         ))}
