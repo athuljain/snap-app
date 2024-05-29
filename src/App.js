@@ -32,6 +32,9 @@ import Admin from "./Components/Admin";
 import Search from "./Components/Search";
 import { InputExample } from "./Components/InputExample";
 import PrimeChecker from "./Components/Prime";
+import { AdidasData, NikeProducts } from "./Components/ShoesAdidas";
+import ShoesParams from "./Components/ShoesParams";
+import ProductEditParams from "./Components/ProductEditParams";
 
 function App() {
   const data = "kadavanthra";
@@ -48,6 +51,11 @@ function App() {
   const [logUser, setLogUser] = useState([]);
   const [selectedProduct, setSelectedProduct] = useState(null);
 
+
+  const [AdidasShoes,setAdidasShoes]=useState(AdidasData)
+  const [NikeShoes,setNikeShoes]=useState(NikeProducts)
+
+ 
   const values = {
     snap,
     setSnap,
@@ -68,6 +76,7 @@ function App() {
     setLogUser,
     selectedProduct,
     setSelectedProduct,
+    NikeShoes,setNikeShoes,AdidasShoes,setAdidasShoes
   };
 
   // console.log("app.",likeProducts);
@@ -101,6 +110,10 @@ function App() {
             <Route path="/search" element={<Search />}/>
             <Route path="/input" element={<InputExample />}/>
             <Route path="/prime" element={<PrimeChecker />}/>
+
+
+            <Route path="/shoeParams" element={<ShoesParams />} />
+      <Route path="/shoeEdit/:brand/:id" element={<ProductEditParams />} /> 
           </Routes>
         </myContext.Provider>
       </BrowserRouter>
