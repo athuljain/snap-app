@@ -12,34 +12,35 @@ export default function Search() {
   console.log("filter",filteredShoes);
   console.log("serarch",searchInput);
 
-  // const handleSearch = () => {
-  //   // Filter shoes based on searchInput
-  //   const filtered = shoes.filter(
-  //     (shoe) =>
-  //       shoe.name.toLowerCase().includes(searchInput.toLowerCase()) ||
-  //       shoe.brand.toLowerCase().includes(searchInput.toLowerCase())
-  //   );
-  //   setFilteredShoes(filtered);
-  // };
   const handleSearch = () => {
-    let filtered = [];
-
-  if (searchInput.length === 1) {
-    // Only consider the first letter of the search input
-   filtered = shoes.filter(
-      (shoe) =>
-        shoe.name.toLowerCase().startsWith(searchInput.toLowerCase()) ||
-        shoe.brand.toLowerCase().startsWith(searchInput.toLowerCase())
-    );
-  } else {
-    filtered = shoes.filter(
+    // Filter shoes based on searchInput
+    const filtered = shoes.filter(
       (shoe) =>
         shoe.name.toLowerCase().includes(searchInput.toLowerCase()) ||
         shoe.brand.toLowerCase().includes(searchInput.toLowerCase())
     );
-  }
-  setFilteredShoes(filtered);
-};
+    setFilteredShoes(filtered);
+  };
+
+//   const handleSearch = () => {
+//     let filtered = [];
+
+//   if (searchInput.length === 1) {
+//     // Only consider the first letter of the search input
+//    filtered = shoes.filter(
+//       (shoe) =>
+//         shoe.name.toLowerCase().startsWith(searchInput.toLowerCase()) ||
+//         shoe.brand.toLowerCase().startsWith(searchInput.toLowerCase())
+//     );
+//   } else {
+//     filtered = shoes.filter(
+//       (shoe) =>
+//         shoe.name.toLowerCase().includes(searchInput.toLowerCase()) ||
+//         shoe.brand.toLowerCase().includes(searchInput.toLowerCase())
+//     );
+//   }
+//   setFilteredShoes(filtered);
+// };
 
 
 
